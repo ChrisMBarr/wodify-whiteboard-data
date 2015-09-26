@@ -29,6 +29,7 @@ The overall details for the day and the selected WOD get parsed out like this:
       "description": "Fitness and Performance:Two sets of:- Hawaiian Squat* x 90 seconds each side- Seated Side Taps (Russian Twist) x 30 Seconds*https://www.youtube.com/watch?v=Ya7sdSAt1Hg"
     }
   ],
+  "results_measure": "time", //can be "time", "weight", "reps", or "none"
   "results": {
     "Male Athletes": [
 	    //Array of athlete objetcs here - see below
@@ -42,46 +43,105 @@ The overall details for the day and the selected WOD get parsed out like this:
 And then each athlete object looks something like this:
 ```json
 {
-	"name": "Chris Barr",
-	"avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/574050/635747575930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
-	"rank": 6,
-	"class": "6:30 PM CrossFit",
-	"performance": "20:13",
-	"performance_details": [
-	  "Round 1: 3:10",
-	  "Round 2: 3:10",
-	  "Round 3: 3:31",
-	  "Round 4: 3:15",
-	  "Round 5: 3:29",
-	  "Round 6: 3:38"
-	],
-	"comment": "70# KB",
-	"pr": false,
-	"pr_details": "",
-	"rx": true,
-	"rx_plus": false,
-	"social_likes": 0,
-	"social_comments": 0
+  "name": "Chris Barr",
+  "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
+  "rank": 6,
+  "class": "6:30 PM CrossFit",
+  "performance_string": "20:13",
+  "performance_parts": {
+    "time_minutes": 20,
+    "time_seconds": 13,
+    "total_seconds": 1213
+  },
+  "performance_details": [
+    "Round 1: 3:10",
+    "Round 2: 3:10",
+    "Round 3: 3:31",
+    "Round 4: 3:15",
+    "Round 5: 3:29",
+    "Round 6: 3:38"
+  ],
+  "comment": "70# KB",
+  "pr": false,
+  "pr_details": "",
+  "rx": true,
+  "rx_plus": false,
+  "social_likes": 0,
+  "social_comments": 0
 }
 ```
 
 or like this: *(This is my new Fran time BTW, yay!)*
 ```json
 {
-    "name": "Chris Barr",
-    "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/574050/635747575930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
-    "rank": 9,
-    "class": "4:30 PM CrossFit",
-    "performance": "5:30",
-    "performance_details": [],
-    "comment": "",
-    "pr": true,
-    "pr_details": "PR by 2:09 vs. 7:39 on 12/26/2014",
-    "rx": true,
-    "rx_plus": false,
-    "social_likes": 8,
-    "social_comments": 1
+  "name": "Chris Barr",
+  "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
+  "rank": 9,
+  "class": "4:30 PM CrossFit",
+  "performance_string": "5:30",
+  "performance_parts": {
+    "time_minutes": 5,
+    "time_seconds": 30,
+    "total_seconds": 330
+  },
+  "performance_details": [],
+  "comment": "",
+  "pr": true,
+  "pr_details": "PR by 2:09 vs. 7:39 on 12/26/2014",
+  "rx": true,
+  "rx_plus": false,
+  "social_likes": 8,
+  "social_comments": 1
 }
 ```
 
-Eventaully I'll figure out something that can be done with this data now that it's in an easily consumable format - or maybe you can!
+or like this for a WOD with a **weight based** WOD measure
+```json
+{
+  "name": "John Doe",
+  "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?5720",
+  "rank": 1,
+  "class": "4:30 PM CrossFit",
+  "performance_string": "1 x 2 @ 295 lbs",
+  "performance_parts": {
+    "weight": 295,
+    "units": "lbs",
+    "rounds": 1,
+    "reps": 2
+  },
+  "performance_details": [],
+  "comment": "",
+  "pr": false,
+  "pr_details": "",
+  "rx": false,
+  "rx_plus": false,
+  "social_likes": 0,
+  "social_comments": 0
+}
+```
+
+
+or like this for a **rep based** WOD measure
+```json
+{
+  "name": "Jane Doe",
+  "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?5720"
+  "rank": 2,
+  "class": "4:30 PM CrossFit",
+  "performance_string": "20 + 13",
+  "performance_parts": {
+    "rounds": 20,
+    "reps": 13
+  },
+  "performance_details": [],
+  "comment": "",
+  "pr": false,
+  "pr_details": "",
+  "rx": true,
+  "rx_plus": false,
+  "social_likes": 0,
+  "social_comments": 0
+}
+```
+
+Eventually I'll figure out something that can be done with this data now that it's in an easily consumable format - or maybe you can!
