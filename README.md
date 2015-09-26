@@ -29,7 +29,7 @@ The overall details for the day and the selected WOD get parsed out like this:
       "description": "Fitness and Performance:Two sets of:- Hawaiian Squat* x 90 seconds each side- Seated Side Taps (Russian Twist) x 30 Seconds*https://www.youtube.com/watch?v=Ya7sdSAt1Hg"
     }
   ],
-  "results_measure": "time", //can be "time", "weight", "reps", or "none"
+  "results_measure": "time",
   "results": {
     "Male Athletes": [
 	    //Array of athlete objetcs here - see below
@@ -40,7 +40,10 @@ The overall details for the day and the selected WOD get parsed out like this:
 }
 ```
 
+Note that the `results_measure` property which could be set to can be `"time"`, `"weight"`, `"reps"`, or `"none"`
+
 And then each athlete object looks something like this:
+
 ```json
 {
   "name": "Chris Barr",
@@ -125,7 +128,7 @@ or like this for a **rep based** WOD measure
 ```json
 {
   "name": "Jane Doe",
-  "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?5720"
+  "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?5720",
   "rank": 2,
   "class": "4:30 PM CrossFit",
   "performance_string": "20 + 13",
