@@ -157,7 +157,7 @@ function getAthleteResult(athleteNum, elementToParse){
   var pClass = getAthleteClass($detailItems);
   var pPerf = getAthletePerformanceString($detailItems);
   var pPerfDetails = getAthletePerformanceDetails($detailItems);
-  var pPerfComment = $detailItems.filter(".DetailsComment").text().trim();
+  var pPerfComment = escape($detailItems.filter(".DetailsComment").children("span").attr("title").trim());
   
   //Run some regex's against the performance string
   var parsedTime = pPerf.match(/(\d+):(\d+)/);
