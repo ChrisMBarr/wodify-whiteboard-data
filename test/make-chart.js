@@ -49,6 +49,10 @@ function makeChart(graphData){
 					tt+=" <b>(Rx+)</b>";
 				}
 				
+				if(d.pr){
+					tt+="<hr/>" + d.pr_details;
+				}
+				
 				return tt;
 			}
 		},

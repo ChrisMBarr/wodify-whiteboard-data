@@ -54,7 +54,12 @@ function formatData(data){
           name: athlete.name,
           y: performace,
           color: getAthleteColor(isFemale, athlete.rx, athlete.rx_plus),
-          athleteData: athlete
+          athleteData: athlete,
+          dataLabels:{
+            enabled: athlete.pr,
+            format:"PR!",
+            inside:true
+          }
         });
       }
       
