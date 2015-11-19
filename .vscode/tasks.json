@@ -6,7 +6,9 @@
 		{
 			"taskName": "compile-ts",
 			"isBuildCommand": true,
-			"showOutput": "always"
+			"showOutput": "always",
+			"args": [],
+            "problemMatcher": ["$tsc"]
 		},
 		{
 			"taskName": "watch",
