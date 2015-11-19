@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "name": "wodify-whiteboard-data",
+  "license": "MIT",
+  "description": "Extract the data from the whiteboard view of Wodify.com",
+  "keywords": [
+    "wod",
+    "wodify",
+    "crossfit"
+  ],
+  "author": {
+    "name": "Chris Barr",
+    "url": "http://chris-barr.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismbarr/wodify-whiteboard-data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrismbarr/wodify-whiteboard-data/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.9.2"
+  }
+}
