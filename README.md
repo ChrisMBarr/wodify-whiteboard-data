@@ -40,9 +40,9 @@ The overall details for the day and the selected WOD get parsed out like this:
 }
 ```
 
-Note that the `results_measure` property which could be set to can be `"time"`, `"weight"`, `"reps"`, `rounds + reps`, or `"none"`
+Note that the `results_measure` property which could be set to can be `"time"`, `"weight"`, `"reps"`, `"rounds + reps"`, or `"none"`
 
-And then each athlete object looks something like this:
+The  `results.males` and `results.females` will each contains arrays of athlete objects that each look something like this:
 
 ```json
 {
@@ -74,7 +74,7 @@ And then each athlete object looks something like this:
 }
 ```
 
-or like this: *(This is my new Fran time BTW, yay!)*
+or like this (a WOD with a **time** based measure) *This is my new Fran time BTW, yay!*
 ```json
 {
   "name": "Chris Barr",
@@ -98,7 +98,7 @@ or like this: *(This is my new Fran time BTW, yay!)*
 }
 ```
 
-or like this for a WOD with a **weight based** WOD measure
+or like this (a WOD with a **weight** based measure)
 ```json
 {
   "name": "John Doe",
@@ -123,8 +123,35 @@ or like this for a WOD with a **weight based** WOD measure
 }
 ```
 
+or like this (a WOD with a **reps** based measure)
+```json
+{
+  "name": "Kirstin Barr",
+  "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…0/85272/635167782670000000/m5x2ux_1175130_797683863816_772894032_n_jpg.jpg",
+  "rank": 1,
+  "class_info": "4:30 PM CrossFit",
+  "performance_string": "173 Total Reps",
+  "performance_parts": {
+    "reps": 173,
+    "units": "Total Reps"
+  },
+  "performance_details": [
+    "Round 1: 31 reps",
+    "Round 2: 61 reps",
+    "Round 3: 81 reps"
+  ],
+  "comment": "95# was a bad choice",
+  "pr": false,
+  "pr_details": "",
+  "rx": false,
+  "rx_plus": true,
+  "social_likes": 3,
+  "social_comments": 4
+}
+```
 
-or like this for a **rep based** WOD measure
+
+or like this (a WOD with a **rounds + reps** based measure)
 ```json
 {
   "name": "Jane Doe",
