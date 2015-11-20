@@ -1,161 +1,38 @@
 {
-  "date": "Friday, September 25, 2015",
-  "name": "Snatch+OHS and 12/9/6 MetCon",
+  "date": "Tuesday, November 17, 2015",
+  "name": "Front Squat",
   "comment": "",
   "components": [
     {
-      "name": "Romanian Deadlift",
-      "description": "Fitness:Four sets of: RDLs x 8-10 reps @ 3011 Rest 45 seconds Supine Ring Rows x 10-12 reps @ 2111 Rest 45 seconds Plank from Elbows x 45 seconds Rest 45 seconds"
+      "name": "Front Squat",
+      "description": "Fitness and Performance:Take 10 minutes to build to a heavy-ish Front Squat, and then…Every 3 minutes, for 15 minutes (5 sets) of:Front Squat x 3-5 reps @ 30X1"
     },
     {
-      "name": "Snatch Balance",
-      "description": "Performance:Every 3 minutes, for 18 minutes (6 sets): Snatch Balance + 3 Overhead SquatsBuild to today’s heaviest snatch balance + 3 overhead squats.*If SB is a little new to you, do OHS out of the rack."
+      "name": "Metcon (Weight)",
+      "description": "Fitness and Performance:Every minute, on the minute, for 15 minutes (5 sets each):Minute 1 – 10 Ring DipsMinute 2 – 10 Toes to BarMinute 3 – 15 Kettlebell Swings* Note Weight of KB"
     },
     {
-      "name": "Metcon (Time)",
-      "description": "Fitness:For time: Ball Slams x 24 reps Weighted Box Step Ups x 24 reps Ball Slams x 18 reps Weighted Box Step Ups x 18 reps Ball Slams x 12 reps Weighted Box Step Ups x 12 reps Run 600 Meters"
-    },
-    {
-      "name": "Metcon (Time)",
-      "description": "Performance:For time: 12 Power Snatches (115/75 lbs) 12 Box Jumps (30″/24″) 9 Power Snatches (115/75 lbs) 9 Box Jumps (30″/24″) 6 Power Snatches (115/75 lbs) 6 Box Jumps (30″/24″) Run 600 Meters* Sub For Power Snatches is Power Cleans"
+      "name": "Skill Work",
+      "description": "Fitness and Performance:Three sets of:Supine Ring Rows x 10 reps @ 2111Rest 30 secondsSide Plank x 45 seconds each sideRest 30 seconds"
     }
   ],
-  "results_measure": "time",
+  "results_measure": "weight",
   "results": {
-    "Male Athletes": [
+    "males": [
       {
-        "name": "Joshua Trapp",
-        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?5720",
+        "name": "Jonathan Maxwell",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
         "rank": 1,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "6:11",
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "5 x 5 @ 190 lbs",
         "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 11,
-          "total_seconds": 371
+          "weight": 190,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 5
         },
         "performance_details": [],
         "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Noah Jackson",
-        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?5720",
-        "rank": 2,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "7:26",
-        "performance_parts": {
-          "time_minutes": 7,
-          "time_seconds": 26,
-          "total_seconds": 446
-        },
-        "performance_details": [],
-        "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Stephen Laseter",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…35520112710000000/520/85383/635181149690000000/xugubv_crossfit_pic_jpg.jpg",
-        "rank": 3,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "7:40",
-        "performance_parts": {
-          "time_minutes": 7,
-          "time_seconds": 40,
-          "total_seconds": 460
-        },
-        "performance_details": [],
-        "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "jacob calvert",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/489413/635723929010000000/14140image_jpg.jpg",
-        "rank": 4,
-        "class": "5:30 AM CrossFit",
-        "performance_string": "7:52",
-        "performance_parts": {
-          "time_minutes": 7,
-          "time_seconds": 52,
-          "total_seconds": 472
-        },
-        "performance_details": [],
-        "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Chris Barr",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
-        "rank": 5,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "9:04",
-        "performance_parts": {
-          "time_minutes": 9,
-          "time_seconds": 4,
-          "total_seconds": 544
-        },
-        "performance_details": [],
-        "comment": "Couldn't do more than 3 snatches at a time for most of the rounds...",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Patrick Kindregan",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/437569/635563119020000000/1151image_jpg.jpg",
-        "rank": 6,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "9:30",
-        "performance_parts": {
-          "time_minutes": 9,
-          "time_seconds": 30,
-          "total_seconds": 570
-        },
-        "performance_details": [],
-        "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Colt Kelley",
-        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?5720",
-        "rank": 7,
-        "class": "11:30 AM CrossFit",
-        "performance_string": "6:49",
-        "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 49,
-          "total_seconds": 409
-        },
-        "performance_details": [],
-        "comment": "135 pc",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -164,15 +41,37 @@
         "social_comments": 0
       },
       {
-        "name": "Landau Bright",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/1968/0/635525022900000000/520/85189/635163120790000000/12119image_jpg.jpg",
-        "rank": 8,
-        "class": "11:30 AM CrossFit",
-        "performance_string": "6:56",
+        "name": "Patrick Kindregan",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/437569/635563119020000000/1151image_jpg.jpg",
+        "rank": 2,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "1 x 5 @ 185 lbs",
         "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 56,
-          "total_seconds": 416
+          "weight": 185,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 5
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Chris Barr",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
+        "rank": 3,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "1 x 5 @ 155 lbs",
+        "performance_parts": {
+          "weight": 155,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 5
         },
         "performance_details": [],
         "comment": "",
@@ -186,16 +85,17 @@
       {
         "name": "Andy Edwards",
         "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/85127/635357892110000000/dm81hk_1545092_746237881718_1342399205_n_jpg.jpg",
-        "rank": 9,
-        "class": "5:30 AM CrossFit",
-        "performance_string": "7:26",
+        "rank": 4,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "5 x 5 @ 135 lbs",
         "performance_parts": {
-          "time_minutes": 7,
-          "time_seconds": 26,
-          "total_seconds": 446
+          "weight": 135,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 5
         },
         "performance_details": [],
-        "comment": "95 lbs Power Cleans, 30 inch box and run in rain",
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -204,18 +104,19 @@
         "social_comments": 0
       },
       {
-        "name": "Chad Wilson",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/447717/635574450760000000/yfi2cz_image_jpg.jpg",
-        "rank": 10,
-        "class": "11:30 AM CrossFit",
-        "performance_string": "7:48",
+        "name": "Sean Plunkett",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…9152230000000/ljxri4_11350880_863330463741496_926688120858500444_n_jpg.jpg",
+        "rank": 5,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "1 x 5 @ 135 lbs",
         "performance_parts": {
-          "time_minutes": 7,
-          "time_seconds": 48,
-          "total_seconds": 468
+          "weight": 135,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 5
         },
         "performance_details": [],
-        "comment": "95 lbs",
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -224,18 +125,19 @@
         "social_comments": 0
       },
       {
-        "name": "Jack Smith",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/422335/635756762680000000/14427image_jpg.jpg",
-        "rank": 11,
-        "class": "5:30 AM CrossFit",
-        "performance_string": "8:08",
+        "name": "Jeff Holloway",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390078/635718499990000000/71317image_jpg.jpg",
+        "rank": 6,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "5 x 3 @ 185 lbs",
         "performance_parts": {
-          "time_minutes": 8,
-          "time_seconds": 8,
-          "total_seconds": 488
+          "weight": 185,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 3
         },
         "performance_details": [],
-        "comment": "115 powerclean, 30\" box",
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -244,18 +146,19 @@
         "social_comments": 0
       },
       {
-        "name": "Rhett Rogers",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…83994430000000/93723funny_dogs_funny_dog_picture_21_funnypica_com__jpg.jpg",
-        "rank": 12,
-        "class": "5:30 AM CrossFit",
-        "performance_string": "8:24",
+        "name": "Joey Powers",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/dev/upload/profile/df2edb1b-6b25-4c88-9e6a-8688b66b88aa.jpg",
+        "rank": 6,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "1 x 3 @ 185 lbs",
         "performance_parts": {
-          "time_minutes": 8,
-          "time_seconds": 24,
-          "total_seconds": 504
+          "weight": 185,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 3
         },
         "performance_details": [],
-        "comment": "95#, row 750m",
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -264,18 +167,124 @@
         "social_comments": 0
       },
       {
-        "name": "Jon Wheeler",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/707271/635756564960000000/83455image_jpg.jpg",
-        "rank": 13,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "10:32",
+        "name": "Jonathan Pewitt",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 6,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "5 x 3 @ 145 lbs",
         "performance_parts": {
-          "time_minutes": 10,
-          "time_seconds": 32,
-          "total_seconds": 632
+          "weight": 145,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 3
         },
         "performance_details": [],
-        "comment": "95lbs, 24in box",
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Kevin Kilpatrick",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/571104/635677952050000000/85322image_jpg.jpg",
+        "rank": 6,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "5 x 3 @ 225 lbs",
+        "performance_parts": {
+          "weight": 225,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 3
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Landau Bright",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/1968/0/635525022900000000/520/85189/635163120790000000/12119image_jpg.jpg",
+        "rank": 6,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "1 x 3 @ 125 lbs",
+        "performance_parts": {
+          "weight": 125,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 3
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Nathan Hicks",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…6820000000/5c3b78_10384526_10205628300249504_5135677263691170705_n_jpg.jpg",
+        "rank": 6,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "5 x 3 @ 135 lbs",
+        "performance_parts": {
+          "weight": 135,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 3
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Stephen Laseter",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…35520112710000000/520/85383/635181149690000000/xugubv_crossfit_pic_jpg.jpg",
+        "rank": 6,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "3 x 3 @ 205 lbs",
+        "performance_parts": {
+          "weight": 205,
+          "units": "lbs",
+          "rounds": 3,
+          "reps": 3
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Wesley Styles",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…968/0/635520110930000000/520/85430/635166954570000000/e8z6gp_image_jpg.jpg",
+        "rank": 6,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "5 x 4 @ 185 lbs",
+        "performance_parts": {
+          "weight": 185,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 4
+        },
+        "performance_details": [],
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -284,63 +293,66 @@
         "social_comments": 0
       }
     ],
-    "Female Athletes": [
+    "females": [
       {
-        "name": "Krista Pierce",
-        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?5720",
+        "name": "Anna Logan",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/468063/635699111120000000/203830image_jpg.jpg",
         "rank": 1,
-        "class": "11:30 AM CrossFit",
-        "performance_string": "6:28",
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "1 x 5 @ 115 lbs",
         "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 28,
-          "total_seconds": 388
+          "weight": 115,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 5
         },
         "performance_details": [],
-        "comment": "power cleans",
+        "comment": "",
         "pr": false,
         "pr_details": "",
-        "rx": true,
+        "rx": false,
         "rx_plus": false,
         "social_likes": 0,
         "social_comments": 0
       },
       {
-        "name": "Laura Charlier",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…635520106190000000/520/84660/635171279220000000/rmpl18_laura_c__2__jpg.jpg",
+        "name": "Allison Holloway",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390077/635763854300000000/19349image_jpg.jpg",
         "rank": 2,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "6:33",
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "1 x 5 @ 105 lbs",
         "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 33,
-          "total_seconds": 393
+          "weight": 105,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 5
         },
         "performance_details": [],
         "comment": "",
         "pr": false,
         "pr_details": "",
-        "rx": true,
+        "rx": false,
         "rx_plus": false,
         "social_likes": 0,
         "social_comments": 0
       },
       {
-        "name": "Kirstin Barr",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…0/85272/635167782670000000/m5x2ux_1175130_797683863816_772894032_n_jpg.jpg",
+        "name": "Siri Selle",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390103/635521860170000000/17017image_jpg.jpg",
         "rank": 3,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "6:54",
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "5 x 5 @ 75 lbs",
         "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 54,
-          "total_seconds": 414
+          "weight": 75,
+          "units": "lbs",
+          "rounds": 5,
+          "reps": 5
         },
         "performance_details": [],
         "comment": "",
         "pr": false,
         "pr_details": "",
-        "rx": true,
+        "rx": false,
         "rx_plus": false,
         "social_likes": 0,
         "social_comments": 0
@@ -349,52 +361,13 @@
         "name": "Brooke Thomas",
         "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…45/635743258820000000/3ntcxf_screen_shot_2015_08_04_at_10_57_32_pm_png.jpg",
         "rank": 4,
-        "class": "11:30 AM CrossFit",
-        "performance_string": "6:59",
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "1 x 3 @ 130 lbs",
         "performance_parts": {
-          "time_minutes": 6,
-          "time_seconds": 59,
-          "total_seconds": 419
-        },
-        "performance_details": [],
-        "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Amanda Okubo",
-        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?5720",
-        "rank": 5,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "8:29",
-        "performance_parts": {
-          "time_minutes": 8,
-          "time_seconds": 29,
-          "total_seconds": 509
-        },
-        "performance_details": [],
-        "comment": "",
-        "pr": false,
-        "pr_details": "",
-        "rx": true,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Siri Selle",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390103/635521860170000000/17017image_jpg.jpg",
-        "rank": 6,
-        "class": "8:30 AM CrossFit",
-        "performance_string": "7:16",
-        "performance_parts": {
-          "time_minutes": 7,
-          "time_seconds": 16,
-          "total_seconds": 436
+          "weight": 130,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 3
         },
         "performance_details": [],
         "comment": "",
@@ -406,18 +379,40 @@
         "social_comments": 0
       },
       {
-        "name": "Jessica Dunn",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/713359/635756173520000000/214229image_jpg.jpg",
-        "rank": 7,
-        "class": "11:30 AM CrossFit",
-        "performance_string": "9:19",
+        "name": "Carolyn Brearley",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?6203",
+        "rank": 4,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "1 x 4 @ 75 lbs",
         "performance_parts": {
-          "time_minutes": 9,
-          "time_seconds": 19,
-          "total_seconds": 559
+          "weight": 75,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 4
         },
         "performance_details": [],
-        "comment": "55# power snatch 24\" BJ 750 m row",
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 1
+      },
+      {
+        "name": "Deana Calvert",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/646741/635724042190000000/171017image_jpg.jpg",
+        "rank": 4,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "1 x 3 @ 75 lbs",
+        "performance_parts": {
+          "weight": 75,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 3
+        },
+        "performance_details": [],
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
@@ -426,55 +421,37 @@
         "social_comments": 0
       },
       {
-        "name": "Meaghan Kindregan",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/0/635520113600000000/520/89486/635239343520000000/uzl6mv_img_2826_jpg.jpg",
-        "rank": 7,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "9:19",
+        "name": "Kirstin Barr",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…0/85272/635167782670000000/m5x2ux_1175130_797683863816_772894032_n_jpg.jpg",
+        "rank": 4,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "4 x 4 @ 150 lbs",
         "performance_parts": {
-          "time_minutes": 9,
-          "time_seconds": 19,
-          "total_seconds": 559
+          "weight": 150,
+          "units": "lbs",
+          "rounds": 4,
+          "reps": 4
         },
         "performance_details": [],
-        "comment": "Cleans",
+        "comment": "",
         "pr": false,
         "pr_details": "",
         "rx": false,
         "rx_plus": false,
-        "social_likes": 0,
+        "social_likes": 1,
         "social_comments": 0
       },
       {
-        "name": "Donna Okubo",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390112/635787267530000000/212545image_jpg.jpg",
-        "rank": 8,
-        "class": "5:30 PM CrossFit",
-        "performance_string": "9:55",
+        "name": "Kristi Baker",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/635520095790000000/520/85276/635191488310000000/x77bp5_thcaygp6q0_jpg.jpg",
+        "rank": 4,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "1 x 3 @ 115 lbs",
         "performance_parts": {
-          "time_minutes": 9,
-          "time_seconds": 55,
-          "total_seconds": 595
-        },
-        "performance_details": [],
-        "comment": "PC",
-        "pr": false,
-        "pr_details": "",
-        "rx": false,
-        "rx_plus": false,
-        "social_likes": 0,
-        "social_comments": 0
-      },
-      {
-        "name": "Katie Mahoney",
-        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390113/635596311900000000/21627image_jpg.jpg",
-        "rank": 9,
-        "class": "8:30 AM CrossFit",
-        "performance_string": "12:45",
-        "performance_parts": {
-          "time_minutes": 12,
-          "time_seconds": 45,
-          "total_seconds": 765
+          "weight": 115,
+          "units": "lbs",
+          "rounds": 1,
+          "reps": 3
         },
         "performance_details": [],
         "comment": "",
