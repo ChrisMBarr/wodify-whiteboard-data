@@ -4,7 +4,6 @@ var ts = require('gulp-typescript');
 gulp.task('compile-ts', function() {
   var tsResult = gulp.src('typescript/*.ts')
     .pipe(ts({
-        noExternalResolve: true,
         noImplicitAny: true,
         suppressImplicitAnyIndexErrors: true,
         outDir: "js"
