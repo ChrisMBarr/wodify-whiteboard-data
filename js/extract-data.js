@@ -221,7 +221,7 @@ var Wodify;
                     //Within the male/female groups, loop over the results from each athlete
                     $results.each(function (ii, resultEl) {
                         //Add a new item to the array, one for each athlete
-                        resultsData.push(this.getAthleteResult(ii, resultEl));
+                        resultsData.push(_this.getAthleteResult(ii, resultEl));
                     });
                     if (title.toLowerCase().indexOf('female') !== -1) {
                         results.females = resultsData;
@@ -235,4 +235,5 @@ var Wodify;
         }
         return Extractor;
     })();
+    Wodify.Extractor = Extractor;
 })(Wodify || (Wodify = {}));

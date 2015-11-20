@@ -2,7 +2,7 @@
 /// <reference path="models.d.ts" />
 
 module Wodify {
-  class Extractor {
+  export class Extractor {
     //Default data
     data: IWodData = {
       date: null,
@@ -32,7 +32,7 @@ module Wodify {
     private getWodComponents = (): IWodComponents[] => {
       var components: IWodComponents[] = [];
       //Loop over the components
-      $(".wod_wrapper > .ListRecords > .component_show_wrapper").each(function(i: number, componentEl: Element) {
+      $(".wod_wrapper > .ListRecords > .component_show_wrapper").each((i: number, componentEl: Element) => {
         var $componentItems = $(componentEl).children();
         components.push({
           name: $componentItems.filter(".component_name").text().trim(),
@@ -241,14 +241,14 @@ module Wodify {
       };
   
       //Loop over the groups of male & female athletes
-      $("[id$='WhiteboardWrapper'] > table >tbody >tr> td").each(function(i: number, groupEl: Element) {
+      $("[id$='WhiteboardWrapper'] > table >tbody >tr> td").each((i: number, groupEl: Element) => {
         var $thisGroup = $(groupEl);
         var title = $thisGroup.children(".header2").text().trim();
         var resultsData: IAthlete[] = [];
         var $results = $thisGroup.find(".CardWrapper");
     
         //Within the male/female groups, loop over the results from each athlete
-        $results.each(function(ii: number, resultEl: Element) {
+        $results.each((ii: number, resultEl: Element) => {
           //Add a new item to the array, one for each athlete
           resultsData.push(this.getAthleteResult(ii, resultEl));
         });
