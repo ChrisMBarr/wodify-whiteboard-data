@@ -1,11 +1,31 @@
 /// <reference path="../typings/tsd.d.ts" />
+'use strict';
 var Wodify;
 (function (Wodify) {
     var Extractor = (function () {
         function Extractor() {
             var _this = this;
+            //Default data
+            this.data = {
+                date: null,
+                name: null,
+                comment: null,
+                components: null,
+                results_measure: "none",
+                results: {
+                    males: [],
+                    females: []
+                }
+            };
             this.getData = function () {
-                _this.data.results = _this.getAllAthleteResults();
+                _this.data = {
+                    date: $("[id$='wtDateTitle']").text().trim(),
+                    name: $(".wod_wrapper > .wod_header").text().trim(),
+                    comment: $(".wod_wrapper > .wod_comment").text().trim(),
+                    components: _this.getWodComponents(),
+                    results_measure: "none",
+                    results: _this.getAllAthleteResults()
+                };
                 console.log(JSON.stringify(_this.data, null, 2));
             };
             this.getWodComponents = function () {
@@ -14,8 +34,8 @@ var Wodify;
                 $(".wod_wrapper > .ListRecords > .component_show_wrapper").each(function (i, componentEl) {
                     var $componentItems = $(componentEl).children();
                     components.push({
-                        "name": $componentItems.filter(".component_name").text().trim(),
-                        "description": $componentItems.filter(".component_wrapper").text().trim()
+                        name: $componentItems.filter(".component_name").text().trim(),
+                        description: $componentItems.filter(".component_wrapper").text().trim()
                     });
                 });
                 return components;
@@ -131,10 +151,10 @@ var Wodify;
                 var isRX = $rxBadge.hasClass("RxOnNoClick");
                 var isRxPlus = $rxBadge.hasClass("RxPlusOnNoClick");
                 return {
-                    "isPr": isPR,
-                    "prDetails": prDetails,
-                    "isRx": isRX,
-                    "isRxPlus": isRxPlus
+                    isPr: isPR,
+                    prDetails: prDetails,
+                    isRx: isRX,
+                    isRxPlus: isRxPlus
                 };
             };
             this.getAthleteSocialCounts = function ($result) {
@@ -144,8 +164,8 @@ var Wodify;
                 //Parse out the number of comments from the text and convert it to a real number
                 var commentCount = parseInt($soc.eq(1).children("span").eq(1).text().trim());
                 return {
-                    "likes": likeCount,
-                    "comments": commentCount
+                    likesCount: likeCount,
+                    commentsCount: commentCount
                 };
             };
             this.getAthleteResult = function (athleteNum, elementToParse) {
@@ -171,20 +191,20 @@ var Wodify;
                 var badges = _this.getAthleteBadges($details);
                 var social = _this.getAthleteSocialCounts($thisResult);
                 return {
-                    "name": pName,
-                    "avatar": pImg,
-                    "rank": pRank,
-                    "class": pClass,
-                    "performance_string": pPerf,
-                    "performance_parts": pPerfParts,
-                    "performance_details": pPerfDetails,
-                    "comment": pPerfComment,
-                    "pr": badges.isPr,
-                    "pr_details": badges.prDetails,
-                    "rx": badges.isRx,
-                    "rx_plus": badges.isRxPlus,
-                    "social_likes": social.likes,
-                    "social_comments": social.comments
+                    name: pName,
+                    avatar: pImg,
+                    rank: pRank,
+                    class_info: pClass,
+                    performance_string: pPerf,
+                    performance_parts: pPerfParts,
+                    performance_details: pPerfDetails,
+                    comment: pPerfComment,
+                    pr: badges.isPr,
+                    pr_details: badges.prDetails,
+                    rx: badges.isRx,
+                    rx_plus: badges.isRxPlus,
+                    social_likes: social.likesCount,
+                    social_comments: social.commentsCount
                 };
             };
             this.getAllAthleteResults = function () {

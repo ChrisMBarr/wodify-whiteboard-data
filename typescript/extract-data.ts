@@ -1,7 +1,8 @@
 /// <reference path="../typings/tsd.d.ts" />
-
+'use strict';
 interface IWodComponents {
-
+  name: string;
+  description: string;
 }
 
 interface IWodPerfomancePartsTime {
@@ -23,11 +24,23 @@ interface IWodPerfomancePartsReps {
   units?: string;
 }
 
+interface IAthleteBadges {
+  isPr: boolean;
+  prDetails: string;
+  isRx: boolean;
+  isRxPlus: boolean;
+}
+
+interface IAthleteSocial {
+  likesCount: number;
+  commentsCount: number;
+}
+
 interface IAthlete {
   name: string;
   avatar: string;
   rank: number;
-  class: string;
+  class_info: string;
   performance_string: string;
   performance_parts: IWodPerfomancePartsTime | IWodPerfomancePartsWeight | IWodPerfomancePartsReps,
   performance_details: string[],
@@ -48,45 +61,64 @@ interface IWodResults {
 interface IWodData {
   date: string;
   name: string;
-  coment: string;
-  components: IWodComponents,
+  comment: string;
+  components: IWodComponents[],
   results_measure: string;
   results: IWodResults;
 }
 
 module Wodify {
   class Extractor {
-    data: IWodData;
+    //Default data
+    data: IWodData = {
+      date: null,
+      name: null,
+      comment: null,
+      components: null,
+      results_measure: "none", //this will get replaced later, after we have athlete results to parse
+      results: {
+        males: [],
+        females: []
+      }
+    };
 
     public getData = () => {
-      this.data.results = this.getAllAthleteResults();
+      this.data = {
+        date: $("[id$='wtDateTitle']").text().trim(),
+        name: $(".wod_wrapper > .wod_header").text().trim(),
+        comment: $(".wod_wrapper > .wod_comment").text().trim(),
+        components: this.getWodComponents(),
+        results_measure: "none", //this will get replaced later, after we have athlete results to parse
+        results: this.getAllAthleteResults()
+      };
+
       console.log(JSON.stringify(this.data, null, 2));
     }
 
-    private getWodComponents = () => {
-      var components = [];
+    private getWodComponents = (): IWodComponents[] => {
+      var components: IWodComponents[] = [];
       //Loop over the components
-      $(".wod_wrapper > .ListRecords > .component_show_wrapper").each(function(i:number, componentEl:Element) {
+      $(".wod_wrapper > .ListRecords > .component_show_wrapper").each(function(i: number, componentEl: Element) {
         var $componentItems = $(componentEl).children();
         components.push({
-          "name": $componentItems.filter(".component_name").text().trim(),
-          "description": $componentItems.filter(".component_wrapper").text().trim()
+          name: $componentItems.filter(".component_name").text().trim(),
+          description: $componentItems.filter(".component_wrapper").text().trim()
         })
       });
       return components;
     }
 
-    private getAthleteRank = ($result:JQuery): number => {
+    private getAthleteRank = ($result: JQuery): number => {
       //Parse the ranking to a real number
       return parseInt($result.children(".RankingBanner").text().trim(), 10)
     }
 
-    private getAthleteName = ($resultDetailItems:JQuery) => {
+    private getAthleteName = ($resultDetailItems: JQuery): string => {
       //The name is split into two lines, replace line breaks with spaces
       return $resultDetailItems.eq(0).attr("title").replace("\n", " ");
     }
 
-    private getAthleteAvatar = ($result:JQuery) => {
+    private getAthleteAvatar = ($result: JQuery): string => {
       //Save the full image URL. If it's a relative URL, prefix it with the current page URL
       var imgUrl = $result.find("img").attr("src");
       if (imgUrl.indexOf("http") !== 0) {
@@ -95,15 +127,15 @@ module Wodify {
       return imgUrl;
     }
 
-    private getAthleteClass = ($resultDetailItems:JQuery) => {
+    private getAthleteClass = ($resultDetailItems: JQuery): string => {
       return $resultDetailItems.filter(".DetailsClass").text().trim();
     }
 
-    private getAthletePerformanceString = ($resultDetailItems:JQuery) => {
+    private getAthletePerformanceString = ($resultDetailItems: JQuery): string => {
       return $resultDetailItems.filter(".DetailsPerformance").text().trim();
     }
 
-    private getAthletePerformanceDetails = ($resultDetailItems:JQuery) => {
+    private getAthletePerformanceDetails = ($resultDetailItems: JQuery): string[] => {
       //Details about the performance are stored on the title (like breakdowns for each round in an AMRAP, etc.)
       //Split info on new lines into array parts
       var details = $resultDetailItems.filter(".DetailsPerformance").children("span").attr("title").trim().split("\n");
@@ -114,7 +146,8 @@ module Wodify {
       }
       return details;
     }
-    private setWodMeasure = (athleteNum:number, parsedTime:string[], parsedWeight:string[], parsedReps:string[]) => {
+
+    private setWodMeasure = (athleteNum: number, parsedTime: string[], parsedWeight: string[], parsedReps: string[]): void => {
       //We only need to set the results measure type for the first athlete
       if (athleteNum === 0 && this.data.results_measure === "none") {
         if (parsedTime) {
@@ -128,7 +161,11 @@ module Wodify {
         }
       }
     }
-    private getAthletePerformanceParts = (parsedTime:string[], parsedWeight:string[], parsedReps:string[]): IWodPerfomancePartsTime | IWodPerfomancePartsWeight | IWodPerfomancePartsReps  => {
+
+    private getAthletePerformanceParts =
+    (parsedTime: string[], parsedWeight: string[], parsedReps: string[]):
+      IWodPerfomancePartsTime | IWodPerfomancePartsWeight | IWodPerfomancePartsReps  => {
+
       if (parsedTime) {
         this.data.results_measure = "time";
         let min = parseInt(parsedTime[1], 10);
@@ -180,7 +217,8 @@ module Wodify {
         return parts;
       }
     }
-    private getAthleteBadges = ($resultDetails:JQuery) => {
+
+    private getAthleteBadges = ($resultDetails: JQuery): IAthleteBadges => {
       var $badges = $resultDetails.find(".BadgeWrapper");
       //If there are two badges, then it was a PR since the RX on/off badge is always there
       var isPR = $badges.length === 2;
@@ -196,13 +234,14 @@ module Wodify {
       var isRxPlus = $rxBadge.hasClass("RxPlusOnNoClick");
 
       return {
-        "isPr": isPR,
-        "prDetails": prDetails,
-        "isRx": isRX,
-        "isRxPlus": isRxPlus
+        isPr: isPR,
+        prDetails: prDetails,
+        isRx: isRX,
+        isRxPlus: isRxPlus
       }
     }
-    private getAthleteSocialCounts = ($result:JQuery) => {
+
+    private getAthleteSocialCounts = ($result: JQuery): IAthleteSocial => {
       var $soc = $result.find(".AthleteCardSocialLinks a");
       //Parse out the number of likes from the text and convert it to a real number
       var likeCount = parseInt($soc.eq(0).text().trim().replace(/(un)?like\s.\s/i, ""));
@@ -211,16 +250,16 @@ module Wodify {
       var commentCount = parseInt($soc.eq(1).children("span").eq(1).text().trim());
 
       return {
-        "likes": likeCount,
-        "comments": commentCount
+        likesCount: likeCount,
+        commentsCount: commentCount
       }
     }
 
-    private getAthleteResult = (athleteNum:number, elementToParse:Element): IAthlete => {
+    private getAthleteResult = (athleteNum: number, elementToParse: Element): IAthlete => {
       //Select some elements that we will use in here
-      var $thisResult:JQuery = $(elementToParse);
-      var $details:JQuery = $thisResult.children(".DetailsBanner");
-      var $detailItems:JQuery = $details.children();
+      var $thisResult: JQuery = $(elementToParse);
+      var $details: JQuery = $thisResult.children(".DetailsBanner");
+      var $detailItems: JQuery = $details.children();
 
       var pRank = this.getAthleteRank($thisResult);
       var pName = this.getAthleteName($detailItems);
@@ -244,20 +283,20 @@ module Wodify {
       var social = this.getAthleteSocialCounts($thisResult);
 
       return {
-        "name": pName,
-        "avatar": pImg,
-        "rank": pRank,
-        "class": pClass,
-        "performance_string": pPerf,
-        "performance_parts": pPerfParts,
-        "performance_details": pPerfDetails,
-        "comment": pPerfComment,
-        "pr": badges.isPr,
-        "pr_details": badges.prDetails,
-        "rx": badges.isRx,
-        "rx_plus": badges.isRxPlus,
-        "social_likes": social.likes,
-        "social_comments": social.comments
+        name: pName,
+        avatar: pImg,
+        rank: pRank,
+        class_info: pClass,
+        performance_string: pPerf,
+        performance_parts: pPerfParts,
+        performance_details: pPerfDetails,
+        comment: pPerfComment,
+        pr: badges.isPr,
+        pr_details: badges.prDetails,
+        rx: badges.isRx,
+        rx_plus: badges.isRxPlus,
+        social_likes: social.likesCount,
+        social_comments: social.commentsCount
       };
     }
 
