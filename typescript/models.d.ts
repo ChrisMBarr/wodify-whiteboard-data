@@ -17,9 +17,14 @@ interface IWodPerfomancePartsWeight {
 }
 
 interface IWodPerfomancePartsReps {
-  rounds?: number;
   reps: number;
-  units?: string;
+  units: string;
+}
+
+interface IWodPerfomancePartsRoundsAndReps {
+  rounds: number;
+  reps: number;
+  units: string;
 }
 
 interface IAthleteBadges {

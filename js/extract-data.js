@@ -2,6 +2,17 @@
 /// <reference path="models.d.ts" />
 var Wodify;
 (function (Wodify) {
+    var ResultTypes = (function () {
+        function ResultTypes() {
+        }
+        ResultTypes.none = "none";
+        ResultTypes.reps = "reps";
+        ResultTypes.roundsAndReps = "rounds + reps";
+        ResultTypes.time = "time";
+        ResultTypes.weight = "weight";
+        return ResultTypes;
+    })();
+    Wodify.ResultTypes = ResultTypes;
     var Extractor = (function () {
         function Extractor() {
             var _this = this;
@@ -11,21 +22,18 @@ var Wodify;
                 name: null,
                 comment: null,
                 components: null,
-                results_measure: "none",
+                results_measure: ResultTypes.none,
                 results: {
                     males: [],
                     females: []
                 }
             };
             this.getData = function () {
-                _this.data = {
-                    date: $("[id$='wtDateTitle']").text().trim(),
-                    name: $(".wod_wrapper > .wod_header").text().trim(),
-                    comment: $(".wod_wrapper > .wod_comment").text().trim(),
-                    components: _this.getWodComponents(),
-                    results_measure: "none",
-                    results: _this.getAllAthleteResults()
-                };
+                _this.data.date = $("[id$='wtDateTitle']").text().trim();
+                _this.data.name = $(".wod_wrapper > .wod_header").text().trim();
+                _this.data.comment = $(".wod_wrapper > .wod_comment").text().trim();
+                _this.data.components = _this.getWodComponents();
+                _this.data.results = _this.getAllAthleteResults();
                 console.log(JSON.stringify(_this.data, null, 2));
             };
             this.getWodComponents = function () {
@@ -72,26 +80,35 @@ var Wodify;
                 }
                 return details;
             };
-            this.setWodMeasure = function (athleteNum, parsedTime, parsedWeight, parsedReps) {
+            this.setWodMeasure = function (athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps) {
                 //We only need to set the results measure type for the first athlete
-                if (athleteNum === 0 && _this.data.results_measure === "none") {
+                if (athleteNum === 0 && _this.data.results_measure === ResultTypes.none) {
+                    //console.info(ResultTypes.time, parsedTime);
+                    //console.info(ResultTypes.weight, parsedWeight);
+                    //console.info(ResultTypes.reps, parsedRepsOnly);
+                    //console.info(ResultTypes.roundsAndReps, parsedRoundsAndReps);
                     if (parsedTime) {
-                        _this.data.results_measure = "time";
+                        _this.data.results_measure = ResultTypes.time;
                     }
                     else if (parsedWeight) {
-                        _this.data.results_measure = "weight";
+                        _this.data.results_measure = ResultTypes.weight;
                     }
-                    else if (parsedReps) {
-                        _this.data.results_measure = "reps";
+                    else if (parsedRepsOnly) {
+                        _this.data.results_measure = ResultTypes.reps;
+                    }
+                    else if (parsedRoundsAndReps) {
+                        _this.data.results_measure = ResultTypes.roundsAndReps;
                     }
                     else {
-                        _this.data.results_measure = "none";
+                        _this.data.results_measure = ResultTypes.none;
                     }
                 }
             };
-            this.getAthletePerformanceParts = function (parsedTime, parsedWeight, parsedReps) {
-                if (parsedTime) {
-                    _this.data.results_measure = "time";
+            this.getAthletePerformanceParts = function (athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps) {
+                //determine the measure type for the entire WOD
+                _this.setWodMeasure(athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps);
+                //Now that we have the measure, we can try to parse the parts
+                if (_this.data.results_measure === ResultTypes.time) {
                     var min = parseInt(parsedTime[1], 10);
                     var sec = parseInt(parsedTime[2], 10);
                     return {
@@ -100,8 +117,7 @@ var Wodify;
                         "total_seconds": sec + (min > 0 ? min * 60 : 0)
                     };
                 }
-                else if (parsedWeight) {
-                    _this.data.results_measure = "weight";
+                else if (_this.data.results_measure === ResultTypes.weight) {
                     var rounds = parseInt(parsedWeight[1], 10);
                     var reps = parseInt(parsedWeight[2], 10);
                     var weight = parseInt(parsedWeight[3], 10);
@@ -118,25 +134,27 @@ var Wodify;
                     }
                     return parts;
                 }
-                else if (parsedReps) {
-                    _this.data.results_measure = "reps";
-                    var rRounds = parseInt(parsedReps[1], 10);
-                    var rReps = parseInt(parsedReps[2], 10);
-                    var rUnits = parsedReps[3];
-                    var parts = {
-                        reps: 0
+                else if (_this.data.results_measure === ResultTypes.reps) {
+                    var reps = parseInt(parsedRepsOnly[1], 10);
+                    var units = parsedRepsOnly[2] || "";
+                    return {
+                        reps: reps,
+                        units: units
                     };
-                    if (!isNaN(rRounds) && !isNaN(rReps)) {
-                        parts.rounds = rRounds;
-                        parts.reps = rReps;
-                    }
-                    else if (!isNaN(rRounds) && isNaN(rReps)) {
-                        parts.reps = rRounds;
-                    }
-                    if (rUnits) {
-                        parts.units = rUnits;
-                    }
-                    return parts;
+                }
+                else if (_this.data.results_measure === ResultTypes.roundsAndReps) {
+                    var rounds = parseInt(parsedRoundsAndReps[1], 10);
+                    var reps = parseInt(parsedRoundsAndReps[2], 10);
+                    var units = parsedRoundsAndReps[3] || "";
+                    return {
+                        rounds: rounds,
+                        reps: reps,
+                        units: units
+                    };
+                }
+                else {
+                    //Something else!
+                    return null;
                 }
             };
             this.getAthleteBadges = function ($resultDetails) {
@@ -179,15 +197,18 @@ var Wodify;
                 var pClass = _this.getAthleteClass($detailItems);
                 var pPerf = _this.getAthletePerformanceString($detailItems);
                 var pPerfDetails = _this.getAthletePerformanceDetails($detailItems);
-                var pPerfComment = $detailItems.filter(".DetailsComment").children("span").attr("title").trim();
+                var pPerfComment = ($detailItems.filter(".DetailsComment").children("span").first().attr("title") || "").trim();
                 //Run some regex's against the performance string
-                var parsedTime = pPerf.match(/(\d+):(\d+)/);
-                var parsedWeight = pPerf.match(/(?:(\d+)\sX\s(\d+) @ )?(\d+)\s(lbs?|kgs?)/i);
-                var parsedReps = pPerf.match(/(\d+)(?:\s\+\s(\d+))?\s?([a-z\s]+)?/i);
-                //determine the measure type for the entire WOD
-                _this.setWodMeasure(athleteNum, parsedTime, parsedWeight, parsedReps);
+                //Finds strings like `21:43`
+                var parsedTime = pPerf.match(/^(\d+):(\d+)$/);
+                //Finds strings like `1 X 5 @ 155 lbs` or `70 lbs` or `20 kgs`
+                var parsedWeight = pPerf.match(/^(?:(\d+)\sX\s(\d+) @ )?(\d+)\s(lbs?|kgs?)$/i);
+                //finds strings like `32` or `145 total reps` or `95 calories`
+                var parsedRepsOnly = pPerf.match(/^(\d+)\s?([a-z\s]+)?$/i);
+                //finds strings like `18 + 6 rounds` or `4 + 0`
+                var parsedRoundsAndReps = pPerf.match(/^(\d+)\s\+\s(\d+)?\s?([a-z\s]+)?$/i);
                 //Now back to the athlete, parse the performance parts
-                var pPerfParts = _this.getAthletePerformanceParts(parsedTime, parsedWeight, parsedReps);
+                var pPerfParts = _this.getAthletePerformanceParts(athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps);
                 var badges = _this.getAthleteBadges($details);
                 var social = _this.getAthleteSocialCounts($thisResult);
                 return {
