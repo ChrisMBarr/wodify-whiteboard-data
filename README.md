@@ -31,16 +31,16 @@ The overall details for the day and the selected WOD get parsed out like this:
   ],
   "results_measure": "time",
   "results": {
-    "Male Athletes": [
-	    //Array of athlete objetcs here - see below
+    "males": [
+	    {},{},{}
 	  ],
-	  "Female Athletes": [
-	    //Array of athlete objetcs here - see below
+	  "females": [
+	    {},{},{}
 	  ]
 }
 ```
 
-Note that the `results_measure` property which could be set to can be `"time"`, `"weight"`, `"reps"`, or `"none"`
+Note that the `results_measure` property which could be set to can be `"time"`, `"weight"`, `"reps"`, `rounds + reps`, or `"none"`
 
 And then each athlete object looks something like this:
 
@@ -49,7 +49,7 @@ And then each athlete object looks something like this:
   "name": "Chris Barr",
   "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
   "rank": 6,
-  "class": "6:30 PM CrossFit",
+  "class_info": "6:30 PM CrossFit",
   "performance_string": "20:13",
   "performance_parts": {
     "time_minutes": 20,
@@ -80,7 +80,7 @@ or like this: *(This is my new Fran time BTW, yay!)*
   "name": "Chris Barr",
   "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5930000000/9s9gro_11796439_10100163210183116_1876396668901575280_n_jpg.jpg",
   "rank": 9,
-  "class": "4:30 PM CrossFit",
+  "class_info": "4:30 PM CrossFit",
   "performance_string": "5:30",
   "performance_parts": {
     "time_minutes": 5,
@@ -104,7 +104,7 @@ or like this for a WOD with a **weight based** WOD measure
   "name": "John Doe",
   "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?5720",
   "rank": 1,
-  "class": "4:30 PM CrossFit",
+  "class_info": "4:30 PM CrossFit",
   "performance_string": "1 x 2 @ 295 lbs",
   "performance_parts": {
     "weight": 295,
@@ -130,11 +130,12 @@ or like this for a **rep based** WOD measure
   "name": "Jane Doe",
   "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?5720",
   "rank": 2,
-  "class": "4:30 PM CrossFit",
+  "class_info": "4:30 PM CrossFit",
   "performance_string": "20 + 13",
   "performance_parts": {
     "rounds": 20,
-    "reps": 13
+    "reps": 13,
+    "units": ""
   },
   "performance_details": [],
   "comment": "",
