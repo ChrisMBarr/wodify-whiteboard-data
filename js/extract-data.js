@@ -1,5 +1,5 @@
 /// <reference path="../typings/tsd.d.ts" />
-'use strict';
+/// <reference path="models.d.ts" />
 var Wodify;
 (function (Wodify) {
     var Extractor = (function () {
