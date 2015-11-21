@@ -1,18 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
-/// <reference path="models.d.ts" />
+/// <reference path="models.ts" />
 var Wodify;
 (function (Wodify) {
-    var ResultTypes = (function () {
-        function ResultTypes() {
-        }
-        ResultTypes.none = "none";
-        ResultTypes.reps = "reps";
-        ResultTypes.roundsAndReps = "rounds + reps";
-        ResultTypes.time = "time";
-        ResultTypes.weight = "weight";
-        return ResultTypes;
-    })();
-    Wodify.ResultTypes = ResultTypes;
     var Extractor = (function () {
         function Extractor() {
             var _this = this;
@@ -22,7 +11,7 @@ var Wodify;
                 name: null,
                 comment: null,
                 components: null,
-                results_measure: ResultTypes.none,
+                results_measure: Wodify.Models.ResultTypes.none,
                 results: {
                     males: [],
                     females: []
@@ -82,25 +71,25 @@ var Wodify;
             };
             this.setWodMeasure = function (athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps) {
                 //We only need to set the results measure type for the first athlete
-                if (athleteNum === 0 && _this.data.results_measure === ResultTypes.none) {
+                if (athleteNum === 0 && _this.data.results_measure === Wodify.Models.ResultTypes.none) {
                     //console.info(ResultTypes.time, parsedTime);
                     //console.info(ResultTypes.weight, parsedWeight);
                     //console.info(ResultTypes.reps, parsedRepsOnly);
                     //console.info(ResultTypes.roundsAndReps, parsedRoundsAndReps);
                     if (parsedTime) {
-                        _this.data.results_measure = ResultTypes.time;
+                        _this.data.results_measure = Wodify.Models.ResultTypes.time;
                     }
                     else if (parsedWeight) {
-                        _this.data.results_measure = ResultTypes.weight;
+                        _this.data.results_measure = Wodify.Models.ResultTypes.weight;
                     }
                     else if (parsedRepsOnly) {
-                        _this.data.results_measure = ResultTypes.reps;
+                        _this.data.results_measure = Wodify.Models.ResultTypes.reps;
                     }
                     else if (parsedRoundsAndReps) {
-                        _this.data.results_measure = ResultTypes.roundsAndReps;
+                        _this.data.results_measure = Wodify.Models.ResultTypes.roundsAndReps;
                     }
                     else {
-                        _this.data.results_measure = ResultTypes.none;
+                        _this.data.results_measure = Wodify.Models.ResultTypes.none;
                     }
                 }
             };
@@ -108,7 +97,7 @@ var Wodify;
                 //determine the measure type for the entire WOD
                 _this.setWodMeasure(athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps);
                 //Now that we have the measure, we can try to parse the parts
-                if (_this.data.results_measure === ResultTypes.time) {
+                if (_this.data.results_measure === Wodify.Models.ResultTypes.time) {
                     var min = parseInt(parsedTime[1], 10);
                     var sec = parseInt(parsedTime[2], 10);
                     return {
@@ -117,7 +106,7 @@ var Wodify;
                         "total_seconds": sec + (min > 0 ? min * 60 : 0)
                     };
                 }
-                else if (_this.data.results_measure === ResultTypes.weight) {
+                else if (_this.data.results_measure === Wodify.Models.ResultTypes.weight) {
                     var rounds = parseInt(parsedWeight[1], 10);
                     var reps = parseInt(parsedWeight[2], 10);
                     var weight = parseInt(parsedWeight[3], 10);
@@ -134,7 +123,7 @@ var Wodify;
                     }
                     return parts;
                 }
-                else if (_this.data.results_measure === ResultTypes.reps) {
+                else if (_this.data.results_measure === Wodify.Models.ResultTypes.reps) {
                     var reps = parseInt(parsedRepsOnly[1], 10);
                     var units = parsedRepsOnly[2] || "";
                     return {
@@ -142,7 +131,7 @@ var Wodify;
                         units: units
                     };
                 }
-                else if (_this.data.results_measure === ResultTypes.roundsAndReps) {
+                else if (_this.data.results_measure === Wodify.Models.ResultTypes.roundsAndReps) {
                     var rounds = parseInt(parsedRoundsAndReps[1], 10);
                     var reps = parseInt(parsedRoundsAndReps[2], 10);
                     var units = parsedRoundsAndReps[3] || "";
