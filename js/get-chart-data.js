@@ -5,7 +5,7 @@ var Wodify;
     var GetChartData = (function () {
         function GetChartData() {
             var _this = this;
-            this.getData = function (data) {
+            this.formatData = function (data) {
                 _this.resultPropertyName = _this.getResultPropertyName(data.results_measure);
                 if (!_this.resultPropertyName) {
                     throw "Could not determine the WOD measure!";

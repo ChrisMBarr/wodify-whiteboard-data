@@ -6,7 +6,7 @@ module Wodify {
 
 		private resultPropertyName: string;
 
-		public getData = (data: Models.IWodData): HighchartsSeriesChart => {
+		public formatData = (data: Models.IWodData): HighchartsSeriesChart[] => {
 			this.resultPropertyName = this.getResultPropertyName(data.results_measure);
 
 			if (!this.resultPropertyName) {

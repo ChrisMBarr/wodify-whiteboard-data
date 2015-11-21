@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: #000;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="container" style="height:500px;"></div>
+    
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="js/models.js"></script>
+    <script src="js/get-chart-data.js"></script>
+    <script src="js/make-test-chart.js"></script>
+    <script>
+      $(function(){
+        var getter = new Wodify.GetChartData();
+        var chartMaker = new Wodify.Chart();
+        $.getJSON("sample-data/sample-wod-fran.json", function(JSONdata){
+          var graphData = getter.formatData(JSONdata);
+          chartMaker.makeChart(graphData, "bar", "container");
+        });	
+      });
+    </script>
+  </body>
+</html>
