@@ -1,5 +1,5 @@
 /// <reference path="../typings/tsd.d.ts" />
-/// <reference path="models.d.ts" />
+/// <reference path="models.ts" />
 
 module Wodify {
   export class ResultTypes {
@@ -12,7 +12,7 @@ module Wodify {
 
   export class Extractor {
     //Default data
-    data: IWodData = {
+    data: Models.IWodData = {
       date: null,
       name: null,
       comment: null,
@@ -33,8 +33,8 @@ module Wodify {
       console.log(JSON.stringify(this.data, null, 2));
     }
 
-    private getWodComponents = (): IWodComponents[] => {
-      var components: IWodComponents[] = [];
+    private getWodComponents = (): Models.IWodComponents[] => {
+      var components: Models.IWodComponents[] = [];
       //Loop over the components
       $(".wod_wrapper > .ListRecords > .component_show_wrapper").each((i: number, componentEl: Element) => {
         var $componentItems = $(componentEl).children();
@@ -110,7 +110,7 @@ module Wodify {
 
     private getAthletePerformanceParts =
     (athleteNum: number, parsedTime: string[], parsedWeight: string[], parsedRepsOnly: string[], parsedRoundsAndReps: string[]):
-      IWodPerfomancePartsTime | IWodPerfomancePartsWeight | IWodPerfomancePartsReps | IWodPerfomancePartsRoundsAndReps => {
+      Models.IWodPerfomancePartsTime | Models.IWodPerfomancePartsWeight | Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps => {
 
       //determine the measure type for the entire WOD
       this.setWodMeasure(athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps);
@@ -119,7 +119,7 @@ module Wodify {
       if (this.data.results_measure === ResultTypes.time) {
         let min = parseInt(parsedTime[1], 10);
         let sec = parseInt(parsedTime[2], 10);
-        return <IWodPerfomancePartsTime>{
+        return <Models.IWodPerfomancePartsTime>{
           "time_minutes": min,
           "time_seconds": sec,
           "total_seconds": sec + (min > 0 ? min * 60 : 0)
@@ -129,7 +129,7 @@ module Wodify {
         let reps = parseInt(parsedWeight[2], 10);
         let weight = parseInt(parsedWeight[3], 10);
         let units = parsedWeight[4];
-        let parts: IWodPerfomancePartsWeight = {
+        let parts: Models.IWodPerfomancePartsWeight = {
           "weight": weight,
           "units": units,
         };
@@ -145,7 +145,7 @@ module Wodify {
       } else if (this.data.results_measure === ResultTypes.reps) {
         let reps = parseInt(parsedRepsOnly[1], 10);
         let units = parsedRepsOnly[2] || "";
-        return <IWodPerfomancePartsReps>{
+        return <Models.IWodPerfomancePartsReps>{
           reps: reps,
           units: units
         }
@@ -153,7 +153,7 @@ module Wodify {
         let rounds = parseInt(parsedRoundsAndReps[1], 10);
         let reps = parseInt(parsedRoundsAndReps[2], 10);
         let units = parsedRoundsAndReps[3] || "";
-        return <IWodPerfomancePartsRoundsAndReps>{
+        return <Models.IWodPerfomancePartsRoundsAndReps>{
           rounds: rounds,
           reps: reps,
           units: units
@@ -164,7 +164,7 @@ module Wodify {
       }
     }
 
-    private getAthleteBadges = ($resultDetails: JQuery): IAthleteBadges => {
+    private getAthleteBadges = ($resultDetails: JQuery): Models.IAthleteBadges => {
       var $badges = $resultDetails.find(".BadgeWrapper");
       //If there are two badges, then it was a PR since the RX on/off badge is always there
       var isPR = $badges.length === 2;
@@ -187,7 +187,7 @@ module Wodify {
       }
     }
 
-    private getAthleteSocialCounts = ($result: JQuery): IAthleteSocial => {
+    private getAthleteSocialCounts = ($result: JQuery): Models.IAthleteSocial => {
       var $soc = $result.find(".AthleteCardSocialLinks a");
       //Parse out the number of likes from the text and convert it to a real number
       var likeCount = parseInt($soc.eq(0).text().trim().replace(/(un)?like\s.\s/i, ""));
@@ -201,7 +201,7 @@ module Wodify {
       }
     }
 
-    private getAthleteResult = (athleteNum: number, elementToParse: Element): IAthlete => {
+    private getAthleteResult = (athleteNum: number, elementToParse: Element): Models.IAthlete => {
       //Select some elements that we will use in here
       var $thisResult: JQuery = $(elementToParse);
       var $details: JQuery = $thisResult.children(".DetailsBanner");
@@ -248,8 +248,8 @@ module Wodify {
       };
     }
 
-    private getAllAthleteResults = (): IWodResults => {
-      var results: IWodResults = {
+    private getAllAthleteResults = (): Models.IWodResults => {
+      var results: Models.IWodResults = {
         males: [],
         females: []
       };
@@ -258,7 +258,7 @@ module Wodify {
       $("[id$='WhiteboardWrapper'] > table >tbody >tr> td").each((i: number, groupEl: Element) => {
         var $thisGroup = $(groupEl);
         var title = $thisGroup.children(".header2").text().trim();
-        var resultsData: IAthlete[] = [];
+        var resultsData: Models.IAthlete[] = [];
         var $results = $thisGroup.find(".CardWrapper");
     
         //Within the male/female groups, loop over the results from each athlete
