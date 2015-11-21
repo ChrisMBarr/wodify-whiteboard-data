@@ -3,7 +3,6 @@
 
 module Wodify {
   
-
   export class Extractor {
     //Default data
     data: Models.IWodData = {
