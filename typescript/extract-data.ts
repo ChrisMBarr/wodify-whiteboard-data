@@ -2,13 +2,7 @@
 /// <reference path="models.ts" />
 
 module Wodify {
-  export class ResultTypes {
-    static none = "none";
-    static reps = "reps";
-    static roundsAndReps = "rounds + reps";
-    static time = "time";
-    static weight = "weight";
-  }
+  
 
   export class Extractor {
     //Default data
@@ -17,7 +11,7 @@ module Wodify {
       name: null,
       comment: null,
       components: null,
-      results_measure: ResultTypes.none,
+      results_measure: Models.ResultTypes.none,
       results: {
         males: [],
         females: []
@@ -87,7 +81,7 @@ module Wodify {
 
     private setWodMeasure = (athleteNum: number, parsedTime: string[], parsedWeight: string[], parsedRepsOnly: string[], parsedRoundsAndReps: string[]): void => {
       //We only need to set the results measure type for the first athlete
-      if (athleteNum === 0 && this.data.results_measure === ResultTypes.none) {
+      if (athleteNum === 0 && this.data.results_measure === Models.ResultTypes.none) {
 
         //console.info(ResultTypes.time, parsedTime);
         //console.info(ResultTypes.weight, parsedWeight);
@@ -95,15 +89,15 @@ module Wodify {
         //console.info(ResultTypes.roundsAndReps, parsedRoundsAndReps);
 
         if (parsedTime) {
-          this.data.results_measure = ResultTypes.time;
+          this.data.results_measure = Models.ResultTypes.time;
         } else if (parsedWeight) {
-          this.data.results_measure = ResultTypes.weight;
+          this.data.results_measure = Models.ResultTypes.weight;
         } else if (parsedRepsOnly) {
-          this.data.results_measure = ResultTypes.reps;
+          this.data.results_measure = Models.ResultTypes.reps;
         } else if (parsedRoundsAndReps) {
-          this.data.results_measure = ResultTypes.roundsAndReps;
+          this.data.results_measure = Models.ResultTypes.roundsAndReps;
         } else {
-          this.data.results_measure = ResultTypes.none;
+          this.data.results_measure = Models.ResultTypes.none;
         }
       }
     }
@@ -116,7 +110,7 @@ module Wodify {
       this.setWodMeasure(athleteNum, parsedTime, parsedWeight, parsedRepsOnly, parsedRoundsAndReps);
       
       //Now that we have the measure, we can try to parse the parts
-      if (this.data.results_measure === ResultTypes.time) {
+      if (this.data.results_measure === Models.ResultTypes.time) {
         let min = parseInt(parsedTime[1], 10);
         let sec = parseInt(parsedTime[2], 10);
         return <Models.IWodPerfomancePartsTime>{
@@ -124,7 +118,7 @@ module Wodify {
           "time_seconds": sec,
           "total_seconds": sec + (min > 0 ? min * 60 : 0)
         };
-      } else if (this.data.results_measure === ResultTypes.weight) {
+      } else if (this.data.results_measure === Models.ResultTypes.weight) {
         let rounds = parseInt(parsedWeight[1], 10);
         let reps = parseInt(parsedWeight[2], 10);
         let weight = parseInt(parsedWeight[3], 10);
@@ -142,14 +136,14 @@ module Wodify {
         }
 
         return parts;
-      } else if (this.data.results_measure === ResultTypes.reps) {
+      } else if (this.data.results_measure === Models.ResultTypes.reps) {
         let reps = parseInt(parsedRepsOnly[1], 10);
         let units = parsedRepsOnly[2] || "";
         return <Models.IWodPerfomancePartsReps>{
           reps: reps,
           units: units
         }
-      } else if (this.data.results_measure === ResultTypes.roundsAndReps) {
+      } else if (this.data.results_measure === Models.ResultTypes.roundsAndReps) {
         let rounds = parseInt(parsedRoundsAndReps[1], 10);
         let reps = parseInt(parsedRoundsAndReps[2], 10);
         let units = parsedRoundsAndReps[3] || "";

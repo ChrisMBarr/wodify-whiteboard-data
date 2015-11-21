@@ -1,5 +1,25 @@
 module Wodify.Models {
 
+  export class ResultTypes {
+    static none = "none";
+    static reps = "reps";
+    static roundsAndReps = "rounds + reps";
+    static time = "time";
+    static weight = "weight";
+  }
+
+  export class ChartColors {
+    static female = "#F83ADD";
+    static femaleRx = "#E1407A";
+    static femaleRxPlus = "#EE5A38";
+    static male = "#2BACCB";
+    static maleRx = "#2F77B4";
+    static maleRxPlus = "#292BC1";
+  }
+  
+  //====================
+  //Interfaces only below here
+
   export interface IWodComponents {
     name: string;
     description: string;
