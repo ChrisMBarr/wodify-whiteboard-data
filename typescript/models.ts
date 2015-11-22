@@ -67,7 +67,7 @@ module Wodify.Models {
     rank: number;
     class_info: string;
     performance_string: string;
-    performance_parts: IWodPerfomancePartsTime | IWodPerfomancePartsWeight | IWodPerfomancePartsReps,
+    performance_parts: IWodPerfomancePartsTime | IWodPerfomancePartsWeight | IWodPerfomancePartsReps | IWodPerfomancePartsRoundsAndReps,
     performance_details: string[],
     comment: string;
     pr: boolean;

@@ -19,10 +19,10 @@ var Wodify;
                 }
                 return minutes.toString() + ":" + secondsStr;
             };
-            this.makeChart = function (graphData, chartType, elementId) {
-                return new Highcharts.Chart(_this.getChartOptions(graphData, chartType, elementId));
+            this.makeChart = function (rawData, graphData, elementId) {
+                return new Highcharts.Chart(_this.getChartOptions(rawData, graphData, elementId));
             };
-            this.getChartOptions = function (graphData, chartType, elementId) {
+            this.getChartOptions = function (rawData, graphData, elementId) {
                 var chartThis = _this;
                 function tooltipFormatterFn() {
                     //This must not be declared as an arrow function so that
@@ -31,8 +31,18 @@ var Wodify;
                     var tt = "<b style='font-size: 16px;'>#" + d.rank + "</b><br/>";
                     //tt+="<img src='"+d.avatar+"' width='50' height='50'/>";
                     tt += "<b>" + d.name + "</b><br/>";
-                    tt += "<small>" + d.class + "</small><br/>";
-                    tt += "<b>" + chartThis.secondsToFormattedTime(Math.abs(this.y)) + "</b>";
+                    tt += "<small>" + d.class_info + "</small><br/>";
+                    tt += "<b>" + d.performance_string + "</b>";
+                    // if (rawData.results_measure === Models.ResultTypes.time) {
+                    // 	tt += "<b>" + chartThis.secondsToFormattedTime(Math.abs(this.y)) + "</b>";
+                    // } else {
+                    // 	//These three interfaces al have the `units` property on them
+                    // 	let parts: Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps | Models.IWodPerfomancePartsWeight
+                    // 	 = <Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps | Models.IWodPerfomancePartsWeight>
+                    // 	 d.performance_parts;
+                    // 	let suffix = " " + parts.units;
+                    // 	tt += "<b>" + Math.abs(this.y) + suffix + "</b>";
+                    // }
                     if (d.rx) {
                         tt += " <b>(Rx)</b>";
                     }
@@ -44,10 +54,20 @@ var Wodify;
                     }
                     return tt;
                 }
+                function xAxisFormatter() {
+                    //This must not be declared as an arrow function so that
+                    //we can have access to `this` within the context of ths function
+                    if (rawData.results_measure === Wodify.Models.ResultTypes.time) {
+                        return chartThis.secondsToFormattedTime(Math.abs(this.value));
+                    }
+                    else {
+                        return Math.abs(this.value).toString();
+                    }
+                }
                 return {
                     chart: {
                         renderTo: elementId,
-                        type: chartType,
+                        type: "bar",
                         backgroundColor: _this.chartBackgroundColor
                     },
                     title: { text: null },
@@ -98,9 +118,7 @@ var Wodify;
                             style: {
                                 color: _this.chartAccentColor
                             },
-                            formatter: function () {
-                                return chartThis.secondsToFormattedTime(Math.abs(this.value));
-                            }
+                            formatter: xAxisFormatter
                         },
                         gridLineColor: _this.chartAccentColor,
                         tickWidth: 1,

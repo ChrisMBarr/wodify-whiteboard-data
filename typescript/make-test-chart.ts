@@ -3,10 +3,10 @@
 
 module Wodify {
 	export class Chart {
-		
+
 		private chartAccentColor = "#aaaaaa";
 		private chartBackgroundColor = "#222";
-		
+
 		private secondsToFormattedTime = (totalSeconds: number): string=> {
 			var minutes: number = Math.floor(totalSeconds / 60)
 			var seconds: number = (totalSeconds - minutes * 60);
@@ -19,23 +19,34 @@ module Wodify {
 			return minutes.toString() + ":" + secondsStr;
 		}
 
-		public makeChart = (graphData: HighchartsSeriesChart[], chartType:string, elementId: string):HighchartsChartObject => {
-			return new Highcharts.Chart(this.getChartOptions(graphData, chartType, elementId));
+		public makeChart = (rawData: Models.IWodData, graphData: HighchartsSeriesChart[], elementId: string): HighchartsChartObject => {
+			return new Highcharts.Chart(this.getChartOptions(rawData, graphData, elementId));
 		}
 
-		private getChartOptions = (graphData: HighchartsSeriesChart[], chartType:string, elementId: string): HighchartsOptions=> {
+		private getChartOptions = (rawData: Models.IWodData, graphData: HighchartsSeriesChart[], elementId: string): HighchartsOptions=> {
 			let chartThis = this;
 
-			function tooltipFormatterFn() {
+			function tooltipFormatterFn(): string {
 				//This must not be declared as an arrow function so that
 				//we can have access to `this` within the context of ths function
-				var d = this.point.athleteData;
-				var tt = "<b style='font-size: 16px;'>#" + d.rank + "</b><br/>"; 
+				let d: Models.IAthlete = this.point.athleteData;
+				let tt = "<b style='font-size: 16px;'>#" + d.rank + "</b><br/>"; 
 				//tt+="<img src='"+d.avatar+"' width='50' height='50'/>";
 				tt += "<b>" + d.name + "</b><br/>";
-				tt += "<small>" + d.class + "</small><br/>";
-				tt += "<b>" + chartThis.secondsToFormattedTime(Math.abs(this.y)) + "</b>";
+				tt += "<small>" + d.class_info + "</small><br/>";
+				
+				tt += "<b>" + d.performance_string + "</b>";
 
+				// if (rawData.results_measure === Models.ResultTypes.time) {
+				// 	tt += "<b>" + chartThis.secondsToFormattedTime(Math.abs(this.y)) + "</b>";
+				// } else {
+				// 	//These three interfaces al have the `units` property on them
+				// 	let parts: Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps | Models.IWodPerfomancePartsWeight
+				// 	 = <Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps | Models.IWodPerfomancePartsWeight>
+				// 	 d.performance_parts;
+				// 	let suffix = " " + parts.units;
+				// 	tt += "<b>" + Math.abs(this.y) + suffix + "</b>";
+				// }
 				if (d.rx) {
 					tt += " <b>(Rx)</b>";
 				} else if (d.rx_plus) {
@@ -49,10 +60,20 @@ module Wodify {
 				return tt;
 			}
 
+			function xAxisFormatter(): string {
+				//This must not be declared as an arrow function so that
+				//we can have access to `this` within the context of ths function
+				if (rawData.results_measure === Models.ResultTypes.time) {
+					return chartThis.secondsToFormattedTime(Math.abs(this.value));
+				} else {
+					return Math.abs(this.value).toString();
+				}
+			}
+
 			return {
 				chart: {
 					renderTo: elementId,
-					type: chartType,
+					type: "bar",
 					backgroundColor: this.chartBackgroundColor
 				},
 				title: { text: null },
@@ -103,9 +124,7 @@ module Wodify {
 						style: {
 							color: this.chartAccentColor
 						},
-						formatter: function() {
-							return chartThis.secondsToFormattedTime(Math.abs(this.value));
-						}
+						formatter: xAxisFormatter
 					},
 					gridLineColor: this.chartAccentColor,
 					tickWidth: 1,
