@@ -33,16 +33,6 @@ var Wodify;
                     tt += "<b>" + d.name + "</b><br/>";
                     tt += "<small>" + d.class_info + "</small><br/>";
                     tt += "<b>" + d.performance_string + "</b>";
-                    // if (rawData.results_measure === Models.ResultTypes.time) {
-                    // 	tt += "<b>" + chartThis.secondsToFormattedTime(Math.abs(this.y)) + "</b>";
-                    // } else {
-                    // 	//These three interfaces al have the `units` property on them
-                    // 	let parts: Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps | Models.IWodPerfomancePartsWeight
-                    // 	 = <Models.IWodPerfomancePartsReps | Models.IWodPerfomancePartsRoundsAndReps | Models.IWodPerfomancePartsWeight>
-                    // 	 d.performance_parts;
-                    // 	let suffix = " " + parts.units;
-                    // 	tt += "<b>" + Math.abs(this.y) + suffix + "</b>";
-                    // }
                     if (d.rx) {
                         tt += " <b>(Rx)</b>";
                     }
