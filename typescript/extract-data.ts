@@ -82,10 +82,10 @@ module Wodify {
       //We only need to set the results measure type for the first athlete
       if (athleteNum === 0 && this.data.results_measure === Models.ResultTypes.none) {
 
-        //console.info(ResultTypes.time, parsedTime);
-        //console.info(ResultTypes.weight, parsedWeight);
-        //console.info(ResultTypes.reps, parsedRepsOnly);
-        //console.info(ResultTypes.roundsAndReps, parsedRoundsAndReps);
+        //console.info(Models.ResultTypes.time, parsedTime);
+        //console.info(Models.ResultTypes.weight, parsedWeight);
+        //console.info(Models.ResultTypes.reps, parsedRepsOnly);
+        //console.info(Models.ResultTypes.roundsAndReps, parsedRoundsAndReps);
 
         if (parsedTime) {
           this.data.results_measure = Models.ResultTypes.time;
