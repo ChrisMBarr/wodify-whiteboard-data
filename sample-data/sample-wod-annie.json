@@ -1,0 +1,606 @@
+{
+  "date": "Tuesday, November 24, 2015",
+  "name": "Annie and 20Min Row",
+  "comment": "",
+  "components": [
+    {
+      "name": "Annie (Time)",
+      "description": "50-40-30-20-10  Double-unders  Sit-upsSub will be 2:1 Singles - Singles are not Rx."
+    },
+    {
+      "name": "20 Minute Row (Distance)",
+      "description": "Partner VersionPick a partner and row as far as possible in 20 minutes, switching every 500m. *Note the name of your partner."
+    },
+    {
+      "name": "20 Minute Row (Distance)",
+      "description": "Solo Version"
+    }
+  ],
+  "results_measure": "time",
+  "results": {
+    "males": [
+      {
+        "name": "Landau Bright",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/1968/0/635525022900000000/520/85189/635163120790000000/12119image_jpg.jpg",
+        "rank": 1,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "6:10",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 10,
+          "total_seconds": 370
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 1:07 vs. 7:17 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 3,
+        "social_comments": 0
+      },
+      {
+        "name": "jacob calvert",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/489413/635723929010000000/14140image_jpg.jpg",
+        "rank": 2,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "6:12",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 12,
+          "total_seconds": 372
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 0:26 vs. 6:38 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Kirt Finnell",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…,x_0,y_0/v1/1968/572225/635687542600000000/i9fupy_gerard_butler300_jpg.jpg",
+        "rank": 3,
+        "class_info": "6:30 PM CrossFit",
+        "performance_string": "6:17",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 17,
+          "total_seconds": 377
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 0:45 vs. 7:02 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Patrick Collier",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…x_0,y_0/v1/1968/390069/635688524660000000/cw06j2_coaching_vs__kr_6_jpg.jpg",
+        "rank": 4,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "6:20",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 20,
+          "total_seconds": 380
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Glenn Getchell",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…35520107230000000/520/84660/635371369720000000/f2cz91_steve_martin_jpg.jpg",
+        "rank": 5,
+        "class_info": "6:30 PM CrossFit",
+        "performance_string": "6:44",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 44,
+          "total_seconds": 404
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Joey Powers",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/dev/upload/profile/df2edb1b-6b25-4c88-9e6a-8688b66b88aa.jpg",
+        "rank": 6,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "6:58",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 58,
+          "total_seconds": 418
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 0:33 vs. 7:31 on 11/24/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 2
+      },
+      {
+        "name": "Chris Barr",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…0/635840818590000000/bljkf7_screen_shot_2015_11_23_at_9_11_15_pm_2_png.jpg",
+        "rank": 7,
+        "class_info": "6:30 PM CrossFit",
+        "performance_string": "7:19",
+        "performance_parts": {
+          "time_minutes": 7,
+          "time_seconds": 19,
+          "total_seconds": 439
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 0:47 vs. 8:06 on 10/09/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Joey Powers",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/dev/upload/profile/df2edb1b-6b25-4c88-9e6a-8688b66b88aa.jpg",
+        "rank": 8,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "7:31",
+        "performance_parts": {
+          "time_minutes": 7,
+          "time_seconds": 31,
+          "total_seconds": 451
+        },
+        "performance_details": [],
+        "comment": "missed on 1st set 3 times",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Andy Calvert",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 9,
+        "class_info": "6:30 PM CrossFit",
+        "performance_string": "8:00",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 0,
+          "total_seconds": 480
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Patrick Kindregan",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/437569/635563119020000000/1151image_jpg.jpg",
+        "rank": 10,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "8:55",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 55,
+          "total_seconds": 535
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 1:11 vs. 10:06 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Kavan Youngblood",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/390083/635699701570000000/13236image_jpg.jpg",
+        "rank": 11,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "9:32",
+        "performance_parts": {
+          "time_minutes": 9,
+          "time_seconds": 32,
+          "total_seconds": 572
+        },
+        "performance_details": [],
+        "comment": ".....",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 3,
+        "social_comments": 0
+      },
+      {
+        "name": "Andrew Kendrick",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/778014/635826668030000000/xj8i24_dscf7856_screen_jpg.jpg",
+        "rank": 12,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "11:15",
+        "performance_parts": {
+          "time_minutes": 11,
+          "time_seconds": 15,
+          "total_seconds": 675
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Kincaid Wurl",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 13,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "7:00",
+        "performance_parts": {
+          "time_minutes": 7,
+          "time_seconds": 0,
+          "total_seconds": 420
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": null,
+        "social_comments": null
+      },
+      {
+        "name": "Jonathan Maxwell",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 14,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "8:50",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 50,
+          "total_seconds": 530
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Derek Fine",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/692848/635744127410000000/23539image_jpg.jpg",
+        "rank": 15,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "8:55",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 55,
+          "total_seconds": 535
+        },
+        "performance_details": [],
+        "comment": "single",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Al Threlkeld",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…5520110730000000/520/85140/635163446520000000/2141220130914_101021_jpg.jpg",
+        "rank": 16,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "9:34",
+        "performance_parts": {
+          "time_minutes": 9,
+          "time_seconds": 34,
+          "total_seconds": 574
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Sean Plunkett",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…9152230000000/ljxri4_11350880_863330463741496_926688120858500444_n_jpg.jpg",
+        "rank": 17,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "9:36",
+        "performance_parts": {
+          "time_minutes": 9,
+          "time_seconds": 36,
+          "total_seconds": 576
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Keenan Riley",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…1/1968/0/635779378610000000/520/85284/635316372090000000/2109image_jpg.jpg",
+        "rank": 18,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "11:06",
+        "performance_parts": {
+          "time_minutes": 11,
+          "time_seconds": 6,
+          "total_seconds": 666
+        },
+        "performance_details": [],
+        "comment": "singles",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Jon Wheeler",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/dev/upload/profile/b564fc22-f7b3-4725-a466-eacadf99728e.jpg",
+        "rank": 19,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "11:30",
+        "performance_parts": {
+          "time_minutes": 11,
+          "time_seconds": 30,
+          "total_seconds": 690
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Joe Vargo",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…x_0,y_0/v1/1968/836617/635838977170000000/v2ojgo_dr__vargo_color_2_jpg.jpg",
+        "rank": 20,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "12:55",
+        "performance_parts": {
+          "time_minutes": 12,
+          "time_seconds": 55,
+          "total_seconds": 775
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      }
+    ],
+    "females": [
+      {
+        "name": "Amanda Okubo",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?6203",
+        "rank": 1,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "5:58",
+        "performance_parts": {
+          "time_minutes": 5,
+          "time_seconds": 58,
+          "total_seconds": 358
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 0:33 vs. 6:31 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 10,
+        "social_comments": 2
+      },
+      {
+        "name": "Kirstin Barr",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…0/85272/635167782670000000/m5x2ux_1175130_797683863816_772894032_n_jpg.jpg",
+        "rank": 2,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "6:22",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 22,
+          "total_seconds": 382
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 0:48 vs. 7:10 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Brooke Thomas",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…45/635743258820000000/3ntcxf_screen_shot_2015_08_04_at_10_57_32_pm_png.jpg",
+        "rank": 3,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "6:36",
+        "performance_parts": {
+          "time_minutes": 6,
+          "time_seconds": 36,
+          "total_seconds": 396
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Lee Robinson",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…68/0/635684972160000000/1734/299496/635467595960000000/213956image_jpg.jpg",
+        "rank": 4,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "7:13",
+        "performance_parts": {
+          "time_minutes": 7,
+          "time_seconds": 13,
+          "total_seconds": 433
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 1:22 vs. 8:35 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Tabatha Bright",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/1968/0/635520105710000000/520/85394/635388676840000000/13284image_jpg.jpg",
+        "rank": 5,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "8:06",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 6,
+          "total_seconds": 486
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Carson Hamilton",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/0/635629867560000000/22282image_jpg.jpg",
+        "rank": 6,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "8:20",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 20,
+          "total_seconds": 500
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": true,
+        "pr_details": "PR by 1:12 vs. 9:32 on 08/03/2015",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Trisha Abston",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/0/635520094460000000/520/85395/635163440000000000/gfsmw7_img_1576_jpg.jpg",
+        "rank": 7,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "10:42",
+        "performance_parts": {
+          "time_minutes": 10,
+          "time_seconds": 42,
+          "total_seconds": 642
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Tanya Hicks",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/358774/635560031920000000/211951image_jpg.jpg",
+        "rank": 8,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "8:11",
+        "performance_parts": {
+          "time_minutes": 8,
+          "time_seconds": 11,
+          "total_seconds": 491
+        },
+        "performance_details": [],
+        "comment": "sub 25,20,15,10,5 air squats for d/u",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Leslie Wurl",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_female_175.png?6203",
+        "rank": 9,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "9:00",
+        "performance_parts": {
+          "time_minutes": 9,
+          "time_seconds": 0,
+          "total_seconds": 540
+        },
+        "performance_details": [],
+        "comment": "Singles",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      }
+    ]
+  }
+}

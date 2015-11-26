@@ -1,0 +1,311 @@
+{
+  "date": "Tuesday, November 24, 2015",
+  "name": "Annie and 20Min Row",
+  "comment": "",
+  "components": [
+    {
+      "name": "Annie (Time)",
+      "description": "50-40-30-20-10  Double-unders  Sit-upsSub will be 2:1 Singles - Singles are not Rx."
+    },
+    {
+      "name": "20 Minute Row (Distance)",
+      "description": "Partner VersionPick a partner and row as far as possible in 20 minutes, switching every 500m. *Note the name of your partner."
+    },
+    {
+      "name": "20 Minute Row (Distance)",
+      "description": "Solo Version"
+    }
+  ],
+  "results_measure": "reps",
+  "results": {
+    "males": [
+      {
+        "name": "Kincaid Wurl",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 1,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "5301 meters",
+        "performance_parts": {
+          "reps": 5301,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": null,
+        "social_comments": null
+      },
+      {
+        "name": "jacob calvert",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/489413/635723929010000000/14140image_jpg.jpg",
+        "rank": 2,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "5158 meters",
+        "performance_parts": {
+          "reps": 5158,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Patrick Collier",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…x_0,y_0/v1/1968/390069/635688524660000000/cw06j2_coaching_vs__kr_6_jpg.jpg",
+        "rank": 3,
+        "class_info": "11:30 AM CrossFit",
+        "performance_string": "5012 meters",
+        "performance_parts": {
+          "reps": 5012,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 2,
+        "social_comments": 0
+      },
+      {
+        "name": "Andy Calvert",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 4,
+        "class_info": "6:30 PM CrossFit",
+        "performance_string": "4968 meters",
+        "performance_parts": {
+          "reps": 4968,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 1
+      },
+      {
+        "name": "Joey Powers",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/dev/upload/profile/df2edb1b-6b25-4c88-9e6a-8688b66b88aa.jpg",
+        "rank": 5,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "4958 meters",
+        "performance_parts": {
+          "reps": 4958,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 4,
+        "social_comments": 0
+      },
+      {
+        "name": "Jonathan Maxwell",
+        "avatar": "https://app.wodify.com/W_Theme_UI/img/profile_male_175.png?6203",
+        "rank": 6,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "4771 meters",
+        "performance_parts": {
+          "reps": 4771,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Chris Barr",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…0/635840818590000000/bljkf7_screen_shot_2015_11_23_at_9_11_15_pm_2_png.jpg",
+        "rank": 7,
+        "class_info": "6:30 PM CrossFit",
+        "performance_string": "4647 meters",
+        "performance_parts": {
+          "reps": 4647,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "resistance #7 setting",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Andrew Kendrick",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/778014/635826668030000000/xj8i24_dscf7856_screen_jpg.jpg",
+        "rank": 8,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "4291 meters",
+        "performance_parts": {
+          "reps": 4291,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Jon Wheeler",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/dev/upload/profile/b564fc22-f7b3-4725-a466-eacadf99728e.jpg",
+        "rank": 9,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "4089 meters",
+        "performance_parts": {
+          "reps": 4089,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Joe Vargo",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…x_0,y_0/v1/1968/836617/635838977170000000/v2ojgo_dr__vargo_color_2_jpg.jpg",
+        "rank": 10,
+        "class_info": "5:30 AM CrossFit",
+        "performance_string": "4000 meters",
+        "performance_parts": {
+          "reps": 4000,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Sean Plunkett",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…9152230000000/ljxri4_11350880_863330463741496_926688120858500444_n_jpg.jpg",
+        "rank": 11,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "4864 meters",
+        "performance_parts": {
+          "reps": 4864,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Derek Fine",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/692848/635744127410000000/23539image_jpg.jpg",
+        "rank": 12,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "4647 meters",
+        "performance_parts": {
+          "reps": 4647,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": false,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      }
+    ],
+    "females": [
+      {
+        "name": "Carson Hamilton",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_175,x_0,y_0/v1/1968/0/635629867560000000/22282image_jpg.jpg",
+        "rank": 1,
+        "class_info": "4:30 PM CrossFit",
+        "performance_string": "4210 meters",
+        "performance_parts": {
+          "reps": 4210,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 1,
+        "social_comments": 0
+      },
+      {
+        "name": "Brooke Thomas",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…45/635743258820000000/3ntcxf_screen_shot_2015_08_04_at_10_57_32_pm_png.jpg",
+        "rank": 2,
+        "class_info": "8:30 AM CrossFit",
+        "performance_string": "4033 meters",
+        "performance_parts": {
+          "reps": 4033,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      },
+      {
+        "name": "Tabatha Bright",
+        "avatar": "https://res.cloudinary.com/wodify/image/upload/a_exif,c_fill,h_175,q_80,w_1…/1968/0/635520105710000000/520/85394/635388676840000000/13284image_jpg.jpg",
+        "rank": 3,
+        "class_info": "5:30 PM CrossFit",
+        "performance_string": "3955 meters",
+        "performance_parts": {
+          "reps": 3955,
+          "units": "meters"
+        },
+        "performance_details": [],
+        "comment": "Solo",
+        "pr": false,
+        "pr_details": "",
+        "rx": true,
+        "rx_plus": false,
+        "social_likes": 0,
+        "social_comments": 0
+      }
+    ]
+  }
+}
