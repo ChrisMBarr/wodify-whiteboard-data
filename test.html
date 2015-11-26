@@ -20,7 +20,7 @@
       $(function(){
         var getter = new Wodify.GetChartData();
         var chartMaker = new Wodify.Chart();
-        $.getJSON("sample-data/sample-wod-fran.json", function(JSONdata){
+        $.getJSON("sample-data/sample-wod-rounds-and-reps.json", function(JSONdata){
           var graphData = getter.formatData(JSONdata);
           chartMaker.makeChart(JSONdata, graphData, "container");
         });	

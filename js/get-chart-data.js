@@ -6,8 +6,8 @@ var Wodify;
         function GetChartData() {
             var _this = this;
             this.formatData = function (data) {
-                _this.resultPropertyName = _this.getResultPropertyName(data.results_measure);
-                if (!_this.resultPropertyName) {
+                _this.setResultPropertyNames(data.results_measure);
+                if (!_this.primaryResultPropertyName) {
                     throw "Could not determine the WOD measure!";
                     return [];
                 }
@@ -42,26 +42,30 @@ var Wodify;
                     return isFemale ? Wodify.Models.ChartColors.female : Wodify.Models.ChartColors.male;
                 }
             };
-            this.getResultPropertyName = function (resultType) {
+            this.setResultPropertyNames = function (resultType) {
                 var propName = null;
                 if (resultType === Wodify.Models.ResultTypes.time) {
-                    propName = "total_seconds";
+                    _this.primaryResultPropertyName = "total_seconds";
+                    _this.secondaryResultPropertyName = null;
                 }
                 else if (resultType === Wodify.Models.ResultTypes.weight) {
-                    propName = "weight";
+                    _this.primaryResultPropertyName = "weight";
+                    _this.secondaryResultPropertyName = null;
                 }
                 else if (resultType === Wodify.Models.ResultTypes.reps) {
-                    propName = "reps";
+                    _this.primaryResultPropertyName = "reps";
+                    _this.secondaryResultPropertyName = null;
                 }
                 else if (resultType === Wodify.Models.ResultTypes.roundsAndReps) {
+                    _this.primaryResultPropertyName = "rounds";
+                    _this.secondaryResultPropertyName = "reps";
                 }
-                return propName;
             };
             this.getGenderResults = function (athletesArr, isFemale) {
                 var graphData = [];
                 for (var i = 0; i < athletesArr.length; i++) {
                     var athlete = athletesArr[i];
-                    var performace = athlete.performance_parts[_this.resultPropertyName];
+                    var performace = athlete.performance_parts[_this.primaryResultPropertyName];
                     if (!isFemale) {
                         //reverse the data so the bars appear on the opposite side
                         performace = performace * -1;

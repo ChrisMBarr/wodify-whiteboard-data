@@ -44,7 +44,7 @@ var Wodify;
                     }
                     return tt;
                 }
-                function xAxisFormatter() {
+                function yAxisFormatter() {
                     //This must not be declared as an arrow function so that
                     //we can have access to `this` within the context of ths function
                     if (rawData.results_measure === Wodify.Models.ResultTypes.time) {
@@ -82,7 +82,8 @@ var Wodify;
                         formatter: tooltipFormatterFn
                     },
                     xAxis: [{
-                            title: { enabled: false },
+                            visible: false,
+                            //title: {text:"Males" },
                             lineColor: _this.chartAccentColor,
                             reversed: true,
                             opposite: false,
@@ -91,8 +92,10 @@ var Wodify;
                                     color: _this.chartAccentColor
                                 }
                             }
-                        }, {
-                            title: { enabled: false },
+                        },
+                        {
+                            visible: false,
+                            //title: {text:"Females" },
                             lineColor: _this.chartAccentColor,
                             reversed: true,
                             opposite: true,
@@ -108,7 +111,10 @@ var Wodify;
                             style: {
                                 color: _this.chartAccentColor
                             },
-                            formatter: xAxisFormatter
+                            formatter: yAxisFormatter
+                        },
+                        title: {
+                            text: null
                         },
                         gridLineColor: _this.chartAccentColor,
                         tickWidth: 1,

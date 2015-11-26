@@ -4,12 +4,13 @@
 module Wodify {
 	export class GetChartData {
 
-		private resultPropertyName: string;
+		private primaryResultPropertyName: string;
+		private secondaryResultPropertyName: string;
 
 		public formatData = (data: Models.IWodData): HighchartsSeriesChart[] => {
-			this.resultPropertyName = this.getResultPropertyName(data.results_measure);
+			this.setResultPropertyNames(data.results_measure);
 
-			if (!this.resultPropertyName) {
+			if (!this.primaryResultPropertyName) {
 				throw "Could not determine the WOD measure!";
 				return [];
 			} else {
@@ -44,19 +45,21 @@ module Wodify {
 			}
 		}
 
-		private getResultPropertyName = (resultType: Models.ResultTypes): string=> {
+		private setResultPropertyNames = (resultType: Models.ResultTypes): void=> {
 			let propName: string = null;
 			if (resultType === Models.ResultTypes.time) {
-				propName = "total_seconds";
+				this.primaryResultPropertyName = "total_seconds";
+				this.secondaryResultPropertyName = null;
 			} else if (resultType === Models.ResultTypes.weight) {
-				propName = "weight";
+				this.primaryResultPropertyName = "weight";
+				this.secondaryResultPropertyName = null;
 			} else if (resultType === Models.ResultTypes.reps) {
-				propName = "reps";
+				this.primaryResultPropertyName = "reps";
+				this.secondaryResultPropertyName = null;
 			} else if (resultType === Models.ResultTypes.roundsAndReps) {
-				//TODO: Figure out hwo this will work
-				//result_property_name = "reps";
+				this.primaryResultPropertyName = "rounds";
+				this.secondaryResultPropertyName = "reps";
 			}
-			return propName;
 		}
 
 		private getGenderResults = (athletesArr: Models.IAthlete[], isFemale: boolean) => {
@@ -64,7 +67,7 @@ module Wodify {
 
 			for (var i = 0; i < athletesArr.length; i++) {
 				var athlete = athletesArr[i];
-				var performace = athlete.performance_parts[this.resultPropertyName];
+				var performace = athlete.performance_parts[this.primaryResultPropertyName];
 
 				if (!isFemale) {
 					//reverse the data so the bars appear on the opposite side

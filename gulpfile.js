@@ -13,5 +13,5 @@ gulp.task('compile-ts', function() {
 });
  
 gulp.task('watch', function () {
-  gulp.watch('*.ts', ['compile-ts']);
+  gulp.watch('typescript/*.ts', ['compile-ts']);
 });

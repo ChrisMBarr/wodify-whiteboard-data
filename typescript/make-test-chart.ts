@@ -35,7 +35,7 @@ module Wodify {
 				tt += "<b>" + d.name + "</b><br/>";
 				tt += "<small>" + d.class_info + "</small><br/>";
 				tt += "<b>" + d.performance_string + "</b>";
-				
+
 				if (d.rx) {
 					tt += " <b>(Rx)</b>";
 				} else if (d.rx_plus) {
@@ -49,7 +49,7 @@ module Wodify {
 				return tt;
 			}
 
-			function xAxisFormatter(): string {
+			function yAxisFormatter(): string {
 				//This must not be declared as an arrow function so that
 				//we can have access to `this` within the context of ths function
 				if (rawData.results_measure === Models.ResultTypes.time) {
@@ -87,7 +87,8 @@ module Wodify {
 					formatter: tooltipFormatterFn
 				},
 				xAxis: [{
-					title: { enabled: false },
+					visible: false,
+					//title: {text:"Males" },
 					lineColor: this.chartAccentColor,
 					reversed: true,
 					opposite: false,
@@ -96,24 +97,29 @@ module Wodify {
 							color: this.chartAccentColor
 						}
 					}
-				}, {
-						title: { enabled: false },
-						lineColor: this.chartAccentColor,
-						reversed: true,
-						opposite: true,
-						linkedTo: 0,
-						labels: {
-							style: {
-								color: this.chartAccentColor
-							}
+				},
+				{
+					visible: false,
+					//title: {text:"Females" },
+					lineColor: this.chartAccentColor,
+					reversed: true,
+					opposite: true,
+					linkedTo: 0,
+					labels: {
+						style: {
+							color: this.chartAccentColor
 						}
-					}],
+					}
+				}],
 				yAxis: {
 					labels: {
 						style: {
 							color: this.chartAccentColor
 						},
-						formatter: xAxisFormatter
+						formatter: yAxisFormatter
+					},
+					title:{
+						text:null
 					},
 					gridLineColor: this.chartAccentColor,
 					tickWidth: 1,
